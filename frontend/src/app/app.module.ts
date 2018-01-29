@@ -12,7 +12,8 @@ import {NewMessageComponent} from './new-message.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HomeComponent} from './home.component'
 import { RegisterComponent } from './register.component';
-import {AuthService} from './auth.service'
+import {AuthService} from './auth.service';
+import {ToastyModule} from 'ng2-toasty';
 
 var routes = [{
   path: '',
@@ -40,7 +41,7 @@ var routes = [{
     NewMessageComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent    
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,9 @@ var routes = [{
     ReactiveFormsModule,
     MatFormFieldModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ToastyModule.forRoot()
+
     
   ],
   providers: [WebService, AuthService],
